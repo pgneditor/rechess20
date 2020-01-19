@@ -384,7 +384,7 @@ app.get('/', (req, res) => res.send(`
 
     <div id="root"></div>
 
-    <script src="src/js/index.js?ver=1579423295709.8682"></script>
+    <script src="src/js/index.js?ver=1579424747956.037"></script>
 
   </body>
 

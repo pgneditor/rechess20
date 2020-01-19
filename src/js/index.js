@@ -1556,12 +1556,14 @@ class App extends React.Component{
         dbgetall([["image", "name"]], {}, function(success, result){                        
             if(success && result){                                
                 this.images = e('div', {},
-                    Object.entries(result.image).map(entry=>e('div', {key: entry[0]},
-                        e('div', {style: {margin: "5px", fontSize: "16px", color: "#00f"}},
-                            entry[0],
-                            e('button', {style: {margin: "5px"}, onClick: this.deleteimage.bind(this, entry[0])}, "Delete " + entry[0]),
-                        ),                        
-                        e('img', {src: entry[1].imgsrc})
+                    Object.entries(result.image).map(entry=>e('div', {style: {display: "inline-block", margin: "3px"}, key: entry[0]},
+                        e('div', {style: {backgroundColor: "#ffe", padding: "3px"}},
+                            e('div', {style: {margin: "5px", fontSize: "16px", color: "#00f"}},
+                                entry[0],
+                                e('button', {style: {margin: "5px"}, onClick: this.deleteimage.bind(this, entry[0])}, "Delete " + entry[0]),
+                            ),                        
+                            e('img', {src: entry[1].imgsrc})
+                        )
                     ))
                 )
             }
