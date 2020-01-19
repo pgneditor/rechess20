@@ -1432,7 +1432,7 @@ class App extends React.Component{
             this.currentframe = 0
         }   
 
-        setTimeout(this.playanimation.bind(this, !START_ANIMATION, !RECORD_ANIMATION), 1000)
+        setTimeout(this.playanimation.bind(this, !START_ANIMATION, !RECORD_ANIMATION), 500)
     }
 
     createanimationframe(callback){
@@ -1466,7 +1466,10 @@ class App extends React.Component{
         if(imgname){
             dbget("image", imgname, function(succes, result){
                 if(succes && result){                    
-                    commentcanvas.drawImage(result.imgsrc, Vect(0,0), Vect(bs, bs), drawing.opacity / 9, function(){
+                    let ds = bs * drawing.thickness / 9
+                    let dm = ( bs - ds ) / 2
+                    console.log(ds, dm)
+                    commentcanvas.drawImage(result.imgsrc, Vect(dm,dm), Vect(ds, ds), drawing.opacity / 9, function(){
                         ctx.drawImage(commentcanvas.canvas, bs, 0)
                         commentcanvas.clear()
                         this.setcommentcanvas(commentcanvas, ctx)
