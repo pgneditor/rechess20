@@ -1224,7 +1224,13 @@ class App extends React.Component{
         let issettings = ( key == "settings" ) && (!this.settingscreated)
         if(issettings) this.settingscreated = true
         if(this.settings[key + "on"] || issettings){            
-            return e('div', {key: key, id: key, style: {position: "absolute", width: TAB_WIDTH_PX, height: BOARD_SIZE_PX, backgroundColor: "#ddd", overflow: "scroll", display: issettings ? this.settings.settingson ? "initial" : "none" : "initial"}}, content)
+            return e('div', {key: key, id: key, style: {
+                position: "absolute", width: TAB_WIDTH_PX, height: BOARD_SIZE_PX,
+                backgroundColor: "#ddd",
+                overflow: "scroll",
+                display: issettings ? this.settings.settingson ? "initial" : "none" : "initial"
+            }},
+            content)
         }
         return null
     }
@@ -1625,8 +1631,18 @@ class App extends React.Component{
                     ),
                     e('div', {key: "studydiv", style: {marginTop: "3px", marginBottom: "3px", marginLeft: "5px", display: "flex"}},                                            
                         e(EditableCombo, {ref: this.studycomboref, changecallback: this.studieschanged.bind(this), addcallback: this.addstudy.bind(this), key: "study", id: "study", mergecallback: this.merge.bind(this), savecallback: this.save.bind(this), loadcallback: this.load.bind(this), removecallback: this.remove.bind(this)}, null),                        
-                        TAB_GROUP.map((tab)=>e('button', {key: tab.key + "button", onClick: this.selecttab.bind(this, tab.key)}, tab.caption)),
-                        pushRight(2, e(EditableList, {id: "favline", addcallback: this.addfav.bind(this), loadcallback: this.loadfav.bind(this)}, null)),
+                        TAB_GROUP.map((tab)=>e('button', {
+                            key: tab.key + "button",
+                            onClick: this.selecttab.bind(this, tab.key),
+                            style: {
+                                backgroundColor: this.settings[tab.key + "on"] ? "#afa" : "#eee"
+                            }                            
+                        }, tab.caption)),
+                        pushRight(2, e(EditableList, {
+                            id: "favline",
+                            addcallback: this.addfav.bind(this),
+                            loadcallback: this.loadfav.bind(this)
+                        }, null)),
                     ),
                     e('div', {key: "flexdiv", style: {display: "flex", alignItems: "center", marginLeft: "4px"}}, 
                         e(Board, {squaresize: SQUARE_SIZE, key: "board", ref: this.boardref, playenginemovecallback: this.playenginemovecallback.bind(this), analysisinfocallback: this.analysisinfocallback.bind(this), positionchangedcallback: this.positionchanged.bind(this)}, null),
