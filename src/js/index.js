@@ -1555,7 +1555,7 @@ class App extends React.Component{
     createimages(){
         dbgetall([["image", "name"]], {}, function(success, result){                        
             if(success && result){                                
-                this.images = e('div', {},
+                this.images = e('div', {style: {display: "flex", flexWrap: "wrap", alignItems: "top"}},
                     Object.entries(result.image).map(entry=>e('div', {style: {display: "inline-block", margin: "3px"}, key: entry[0]},
                         e('div', {style: {backgroundColor: "#ffe", padding: "3px"}},
                             e('div', {style: {margin: "5px", fontSize: "16px", color: "#00f"}},
