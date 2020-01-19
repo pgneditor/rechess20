@@ -1120,7 +1120,7 @@ class App extends React.Component{
         img.src = content                
         img.e.onload = ()=>{        
             console.log("img loaded")
-            canvas.ctx.drawImage(img.e, 0, 0)        
+            canvas.ctx.drawImage(img.e, 0, 150)        
             let name = window.prompt("Image name :", nameorig)
             dbput("image", {
                 name: name,
@@ -1129,6 +1129,7 @@ class App extends React.Component{
                 if(ok){
                     this.alert(`Image ${name} stored.`)
                     this.createimages()
+                    setTimeout(function(){canvas.clear()}.bind(this), 3000)
                 }else{
                     this.alert(`Storing image ${name} failed.`)
                 }
