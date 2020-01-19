@@ -37,7 +37,7 @@ try{
             stockfish.terminate()
         }
 
-        stockfish = new Worker("src/cdn/stockfish.js")
+        stockfish = new Worker("src/cdn/stockfish.wasm.js")
 
         stockfish.onmessage = function(data){
             if(callback) callback(data)

@@ -370,7 +370,7 @@ app.get('/', (req, res) => res.send(`
     const INITIAL_GO_CNT = ${engine.lastgocnt}
     const RESOURCES_JSON_B64 = "${RESOURCES_JSON_B64}"
     </script>
-    <script src="src/js/utils.js?ver=1579410769463.6377"></script>
+    <script src="src/js/utils.js?ver=1579440079923.6062"></script>
     <script src="src/js/indexeddb.js?ver=1579421938078.164"></script>
     <script src="src/js/lichess.js?ver=1579153422407.1287"></script>
     <script src="src/module/chessboard.js?vno=1579334861429.4084"></script>
