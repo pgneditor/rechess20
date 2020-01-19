@@ -1,0 +1,50 @@
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 0.5;        
+    }
+}
+
+@font-face {
+    font-family: "custom";
+    src: url("/src/font/custom.woff") format('woff');
+}
+
+@font-face {
+    font-family: "lichess";
+    src: url("/src/font/lichess.woff") format('woff');
+}
+
+
+
+.controlbutton{
+    margin: 1px;
+}
+
+.combo{
+    margin: 1px;
+    font-family: "monospace";
+}
+
+.trainlabel{
+    font-size: 10px;
+}
+
+.summaryitem{
+    width: 30px;
+    padding: 1px;
+    margin: 1px;
+}

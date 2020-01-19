@@ -1,0 +1,1 @@
+node tourney.js getteambattles
