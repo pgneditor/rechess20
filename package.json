@@ -12,7 +12,7 @@
   "dependencies": {
     "@octokit/rest": "^16.36.0",
     "express": "^4.17.1",
-    "firebase-admin": "^8.8.0",
+    "firebase-admin": "^11.4.1",
     "gitlab": "^14.1.0",
     "heroku-client": "^3.1.0",
     "object.fromentries": "^2.0.2",
